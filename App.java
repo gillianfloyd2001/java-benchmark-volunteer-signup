@@ -11,7 +11,18 @@ public class App {
 
     public static void main(String[] args) {
         ArrayList<SignUpForm> signUpForms = loadForm();
-        fillingOutSignUpForm();
+        System.out.println("Are you a memeber of the church and looking for volunteering? (Yes/No)");
+        String memeberOrAdmin = in.nextLine();
+        while (true) {
+            if (memeberOrAdmin.equals("Yes")) {
+                fillingOutSignUpForm();
+            } else {
+                System.out.print("Would you like to review the forms: ");
+                String choice = in.nextLine();
+                break;
+            }
+            break;
+        }
         saveForm(signUpForms);
     }
 
